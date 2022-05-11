@@ -9,7 +9,18 @@
 }
  */
 
-let text = ""
+let isRow = false;
+let myContainer = document.getElementById("flex-container");
+
+let btnClick = document.getElementsByClassName("change-flex-btn").addEventListener("click", "LOCALFUNCTION");
+
+if (isRow) {
+    myContainer.style.flexDirection = "row";
+  } else {
+    myContainer.style.flexDirection = "column";
+}
+
+/* let text = ""
 const fruits = ['orange', 'apple', 'strawberry']
 
 fruits.forEach(getFruits)
@@ -17,8 +28,8 @@ fruits.forEach(getFruits)
 document.getElementById('list').innerHTML = text
 
 function getFruits(item, index) {
-  text += `${index}: ${item}`
-}
+  text += `${index + 1}: ${item}`
+} */
 
 /* person.name = person.name.concat('Smithson')
 
