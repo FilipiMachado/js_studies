@@ -1,4 +1,41 @@
-function Person(name, age) {
+function Person(first, last, age, interests) {
+  this.name = {
+    'first': first,
+    'last': last
+  }
+  this.age = age
+  this.interests = interests
+  this.bio = function() {console.log(`${this.name.first} ${this.name.last} is ${this.age} years old. He likes ${this.interests[0]} and ${this.interests[1]}.`)}
+}
+
+let firstName = window.prompt("Enter your first name: ");
+let lastName = window.prompt("Enter your last name: ");
+let personAge = window.prompt("Enter your age: ");
+let personInterests = []
+personInterests.push(window.prompt("Enter your first interest: "))
+personInterests.push(window.prompt("Enter your second interest: "))
+
+let person1 = new Person(firstName, lastName, personAge, personInterests)
+
+person1.bio()
+console.log(person1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* function Person(name, age) {
   this.name = name
   this.age = age
   this.greeting = function () {
@@ -12,7 +49,7 @@ let person2 = new Person('Vitrola', 21)
 console.log(person1)
 person1.greeting()
 console.log(person2)
-person2.greeting()
+person2.greeting() */
 
 /* let fil = createNewPerson('Fil', 35)
 let vitrola = createNewPerson('Vitrola', 21)
