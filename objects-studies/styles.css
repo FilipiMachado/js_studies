@@ -13,7 +13,8 @@
   font-size: 30px;
 }
 
-.change-flex-btn {
+#change-flex-btn {
+  display: flex;
   width: 15%;
   padding: 10px;
   border: none;
@@ -25,7 +26,7 @@
   font-weight: bold;
   cursor: pointer;
 }
-.change-flex-btn:hover {
+#change-flex-btn:hover {
   transition: 0.5s ease all;
   opacity: 0.8;
 }

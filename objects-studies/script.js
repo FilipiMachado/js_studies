@@ -12,12 +12,17 @@
 let isRow = false;
 let myContainer = document.getElementById("flex-container");
 
-let btnClick = document.getElementsByClassName("change-flex-btn").addEventListener("click", "LOCALFUNCTION");
+document.getElementById("change-flex-btn").addEventListener("click", changeFlexDirection);
 
-if (isRow) {
+
+function changeFlexDirection() {
+  if (isRow) {
     myContainer.style.flexDirection = "row";
+    isRow = false
   } else {
     myContainer.style.flexDirection = "column";
+    isRow = true
+}
 }
 
 /* let text = ""
