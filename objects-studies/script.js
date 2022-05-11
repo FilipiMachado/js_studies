@@ -24,25 +24,6 @@ fil.greeting()
 vitrola.greeting()
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* let person = {
   name: {
     first: 'Bob',
