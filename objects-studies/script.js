@@ -1,4 +1,4 @@
-function Person(first, last, age, interests) {
+/* function Person(first, last, age, interests) {
   this.name = {
     'first': first,
     'last': last
@@ -20,20 +20,7 @@ let person1 = new Person(firstName, lastName, personAge, personInterests)
 person1.bio()
 console.log(person1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 /* function Person(name, age) {
   this.name = name
