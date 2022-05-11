@@ -1,4 +1,4 @@
-let person = {
+/* let person = {
   name: ['Bob', 'Smith'],
   age: 32,
   gender: 'male',
@@ -7,14 +7,35 @@ let person = {
     console.log(`${this.name[0]} ${this.name[1]} have ${this.age} years old. He likes to ${this.interests[0]} and listen to ${this.interests[1]}.`)
   }
 }
+ */
 
-let firstName = person.name[0]
+let text = ""
+const fruits = ['orange', 'apple', 'strawberry']
+
+fruits.forEach(getFruits)
+
+document.getElementById('list').innerHTML = text
+
+function getFruits(item, index) {
+  text += `${index}: ${item}`
+}
+
+/* person.name = person.name.concat('Smithson')
+
+console.log(person)
+
+person.name.pop()
+person.interests.pop()
+
+console.log(person) */
+
+/* let firstName = person.name[0]
 let lastName = person.name[1]
 
 let fullName = firstName.concat(lastName)
 
 console.log(fullName)
-console.log(person.name)
+console.log(person.name) */
 
 //console.log(person)
 
