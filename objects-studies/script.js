@@ -8,13 +8,25 @@ let person = {
   }
 }
 
+let firstName = person.name[0]
+let lastName = person.name[1]
+
+let fullName = firstName.concat(lastName)
+
+console.log(fullName)
+console.log(person.name)
+
 //console.log(person)
 
-let names = ['Bob', 'Smith','Bob', 'Smith','Bob', 'Smith']
+/* let names = ['Bob', 'Smith','Bob', 'Smith','Bob', 'Smith']
 
-for (let i = 1; i < names.length; i++) {
-  console.log(names)
-}
+for (let i = 0; i < names.length; i++) {
+  if (names[i] == 'Smith') {
+    let newNames = []
+    newNames = new Array(names[i])
+    console.log(newNames)
+  }
+} */
 
 /* person.bio()
 console.log(person.age)
