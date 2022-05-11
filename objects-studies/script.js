@@ -8,8 +8,16 @@ let person = {
   }
 }
 
+//console.log(person)
+
+let names = ['Bob', 'Smith','Bob', 'Smith','Bob', 'Smith']
+
+for (let i = 1; i < names.length; i++) {
+  console.log(names)
+}
+
 /* person.bio()
-console.log(person.age) */
+console.log(person.age)
 
 console.log(person)
 
@@ -17,4 +25,4 @@ person.hello = function() { alert('Goodbye to you all!') }
 
 console.log(person)
 
-person.hello()
+person.hello() */
