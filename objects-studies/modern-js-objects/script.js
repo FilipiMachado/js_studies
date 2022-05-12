@@ -1,37 +1,39 @@
 // object literals
 
-const blogs = [
+const newBlogs = [
   {
-    title: 'amazing movies to watch',
+    title: 'Amazing movies to watch',
+    author: 'Fil',
   },
   {
-    title: 'new things to discover',
+    title: 'New things to discover',
+    author: 'Vitrola',
   },
   {
-    title: 'some variety of food',
+    title: 'Some variety of food',
+    author: 'Fil',
   },
 ];
-
-console.log(blogs)
 
 let user = {
   name: 'Fil',
   age: 25,
   email: 'filbr@myemail.com',
-  blogs: ['amazing movies to watch', 'new things to discover', 'some variety of food'],
+  blogs: newBlogs,
   login(info) {
     console.log(`The user: ${info} is logged in!`)
   },
   showBlogs() {
-    
     //console.log(this)
-    /* console.log(`The user has written the following blogs: `)
+    console.log(`The user has written the following blogs: `)
     this.blogs.forEach(blogs => {
-      console.log('- ' + blogs)
-    }) */
+      console.log('- ' + blogs.title)
+      console.log('   author: ' + blogs.author)
+    })
   }
 }
 
+user.showBlogs()
 
 /* let helloMessage = () => {
   console.log('message')
