@@ -57,7 +57,8 @@ function Person(first, last, age, gender, interests) {
 
 let person1 = new Person('Tammi', 'Smith', 32, 'neutral', ['music', 'skiing', 'kickboxing']);
 
-
+person1.bio()
+person1.greeting()
 
 
 
