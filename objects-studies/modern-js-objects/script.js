@@ -1,6 +1,56 @@
+// Built-in Object Methods
+//  -- Math Object
+
+console.log(Math)
+console.log(Math.PI)
+
+const area = 7.8;
+
+console.log(Math.round(area))
+console.log(Math.floor(area))
+console.log(Math.ceil(area))
+
+// random numbers
+
+const randomNumber = Math.random()
+
+console.log(randomNumber);
+console.log(Math.round(randomNumber * 100));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // object literals
 
-const newBlogs = [
+/* const newBlogs = [
   {
     title: 'Amazing movies to watch',
     author: 'Fil',
@@ -33,7 +83,7 @@ let user = {
   }
 }
 
-user.showBlogs()
+user.showBlogs() */
 
 /* let helloMessage = () => {
   console.log('message')
