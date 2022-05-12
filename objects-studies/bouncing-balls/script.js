@@ -74,15 +74,18 @@ Ball.prototype.update = function() {
 
 let balls = [];
 
-while (balls.length < 25) {
+let ballSpeedNegativeValue = -7
+let ballSpeedPositiveValue = 7
+
+while (balls.length < 250) {
   let size = random(10,20);
   let ball = new Ball(
     // ball position always drawn at least one ball width
     // away from the edge of the canvas, to avoid drawing errors
     random(0 + size,width - size),
     random(0 + size,height - size),
-    random(-7,7),
-    random(-7,7),
+    random(ballSpeedNegativeValue, ballSpeedPositiveValue),
+    random(ballSpeedNegativeValue, ballSpeedPositiveValue),
     'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
     size
   );
@@ -90,7 +93,17 @@ while (balls.length < 25) {
   balls.push(ball);
 };
 
-let ballsMovement = true
+function stopBallsMovement() {
+  console.log("funfando!")
+  ballSpeedNegativeValue = 0
+  console.log(ballSpeedNegativeValue)
+  ballSpeedPositiveValue = 0
+  console.log(ballSpeedPositiveValue)
+}
+
+let stopBtn = document.getElementById("stop-balls-btn");
+
+stopBtn.addEventListener("click", stopBallsMovement);
 
 function loop() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
@@ -106,3 +119,18 @@ function loop() {
 
 loop();
 
+// Adding collision detection
+
+Ball.prototype.collisionDetect = function() {
+  for (let j = 0; j < balls.length; j++) {
+    if (!(this === balls[j])) {
+      const dx = this.x - balls[j].x;
+      const dy = this.y - balls[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + balls[j].size) {
+        balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+      }
+    }
+  }
+}
