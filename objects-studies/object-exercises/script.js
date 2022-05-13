@@ -111,3 +111,37 @@ for (let i = 0; i < library.length; i++) {
 
 //-------------------------------------------------------------------------------------------------------------------
 
+/* 5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.
+Volume of a cylinder : V = πr2h
+where r is the radius and h is the height of the cylinder.
+ */
+
+/* const cylinder = {
+  radius: 2,
+  height: 100,
+  getVolume() {
+    const cylinderVolume = Math.sqrt(this.radius) + this.height
+    console.log(cylinderVolume)
+  },
+}
+
+cylinder.getVolume() */
+
+//-------------------------------------------------------------------------------------------------------------------
+
+/* 6. Write a Bubble Sort algorithm in JavaScript.
+Note : Bubble sort is a simple sorting algorithm that works by repeatedly 
+       stepping through the list to be sorted.
+
+Sample Data: [6,4,0, 3,-2,1]
+Expected Output : [-2, 0, 1, 3, 4, 6] */
+
+/* const originalData = [6,4,0, 3,-2,1]
+
+console.log(originalData)
+
+const newData = originalData.sort()
+
+console.log(newData) */
+
+//-------------------------------------------------------------------------------------------------------------------
