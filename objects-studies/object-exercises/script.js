@@ -145,3 +145,22 @@ const newData = originalData.sort()
 console.log(newData) */
 
 //-------------------------------------------------------------------------------------------------------------------
+
+/* 7. Write a JavaScript program which returns a subset of a string.
+
+Sample Data: dog
+Expected Output: ["d", "do", "dog", "o", "og", "g"] */
+
+const dogData = 'dog'
+
+function getSubstring(value1, value2) {
+  console.log(dogData.substring(value1, value2)) 
+}
+
+getSubstring(0, 1)
+getSubstring(0, 2)
+getSubstring(0, 3)
+getSubstring(1, 2)
+getSubstring(1, 3)
+getSubstring(2, 3)
+
