@@ -151,7 +151,7 @@ console.log(newData) */
 Sample Data: dog
 Expected Output: ["d", "do", "dog", "o", "og", "g"] */
 
-const dogData = 'dog'
+/* const dogData = 'dog'
 
 function getSubstring(value1, value2) {
   console.log(dogData.substring(value1, value2)) 
@@ -163,4 +163,48 @@ getSubstring(0, 3)
 getSubstring(1, 2)
 getSubstring(1, 3)
 getSubstring(2, 3)
+ */
+
+//-------------------------------------------------------------------------------------------------------------------
+
+/* 8. Write a JavaScript program to create a Clock.
+Note: The output will come every second.
+
+Expected Console Output :
+"14:37:42"
+"14:37:43"
+"14:37:44"
+"14:37:45"
+"14:37:46"
+"14:37:47" */
+
+/* const hoursData = {
+  hour: '',
+  minute: '',
+  seconds: '',
+  showHours: function() {
+    console.log(`${this.hour}:${this.minute}:${this.seconds}h`)
+  },
+}
+
+function getHoursOnly(time){
+  let dt = time
+  hoursData.hour = (dt.getHours())
+}
+function getMinutesOnly(time){
+  let dt = time
+  hoursData.minute = (dt.getMinutes())
+}
+function getSecondsOnly(time){
+  let dt = time
+  hoursData.seconds = (dt.getSeconds())
+}
+
+getHoursOnly(new Date())
+getMinutesOnly(new Date())
+getSecondsOnly(new Date())
+
+hoursData.showHours() */
+
+//-------------------------------------------------------------------------------------------------------------------
 
