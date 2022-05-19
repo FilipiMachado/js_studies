@@ -12,24 +12,29 @@
   <body>
     <div class="container">
       <form>
-        <i class="fas fa-paper-plane"></i>
+        <i class="fas fa-code"></i>
         <div class="input-group">
           <label>Full Name</label>
           <input type="text" placeholder="Enter your name" />
+          <span id="name-error"></span>
         </div>
         <div class="input-group">
           <label>Phone Number</label>
           <input type="tel" placeholder="12 987654321" />
+          <span id="phone-error"></span>
         </div>
         <div class="input-group">
           <label>Email</label>
-          <input type="email" placeholder="Enter your Email" />
+          <input type="email" placeholder="Enter your email" />
+          <span id="email-error"></span>
         </div>
         <div class="input-group">
           <label>Your Message</label>
           <textarea rows="5" placeholder="Please enter a message..."></textarea>
+          <span id="message-error"></span>
         </div>
         <button>Submit</button>
+        <span id="submit-error"></span>
       </form>
     </div>
   </body>
