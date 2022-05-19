@@ -68,9 +68,12 @@
 .input-group span {
   position: absolute;
   bottom: 12px;
-  right: 17px;
+  right: 25px;
   font-size: 14px;
   color: #fc3917;
+}
+.input-group span i {
+  color: #40cc7d;
 }
 #submit-error {
   display: block;
@@ -80,7 +83,6 @@
 ::placeholder {
   font-size: 14px;
 }
-
 form button {
   background: #0d7188;
   color: #fff;
