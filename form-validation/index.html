@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validation with JS</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
-  <div>
-    <form action="/" method="GET">
+  </head>
+  <body>
+    <div id="error">ERROR!</div>
+    <form id="form" action="/" method="GET">
       <div>
         <label for="name">Name</label>
-        <input type="text">
+        <input id="name" name="name" type="text" />
       </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="text" />
+      </div>
+      <button type="submit">Submit</button>
     </form>
-  </div>
-</body>
+  </body>
 </html>
