@@ -25,4 +25,9 @@ userForm.addEventListener('submit', (e) => {
     e.preventDefault()
     errorEl.innerHTML = messages.join(', ')
   }
+
+  e.preventDefault()
+
+  userNameEl.innerHTML = userName.value
+  userPassword.innerHTML = userPassword.value
 })
