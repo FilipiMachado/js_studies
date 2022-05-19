@@ -40,5 +40,51 @@ function validatePhoneNumber() {
 
 function validateEmail() {
   let email = document.getElementById("contact-email").value;
-  console.log("email btn is working!", email);
+  
+  if (email.length == 0) {
+    emailError.innerHTML = "Email is required!";
+    return false;
+  }
+
+  if (!email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+    emailError.innerHTML = "Email invalid!";
+    return false;
+  }
+
+  emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
+  return true;
+}
+
+function validateMessage() {
+  let message = document.getElementById("contact-message").value;
+  let required = 30;
+  let charsLimit = 100;
+  let charsLeft = required - message.length
+
+  if (charsLeft > 0) {
+    messageError.innerHTML = charsLeft + ' more characters required!'
+    return false;
+  }
+
+  if (message.length >= charsLimit) {
+    messageError.innerHTML = 'No more than 100 characters are allowed!'
+    return false;
+  }
+
+  messageError.innerHTML = '<i class="fas fa-check-circle"></i>';
+  return true;
+}
+
+function validateForm(e) {
+  if (!validateName() || !validatePhoneNumber() || !validateEmail() || !validateMessage()) {
+    submitError.style.display = 'block'
+    submitError.innerHTML = 'Form is incorrect!'
+    setTimeout(function() {
+      submitError.style.display = 'none'
+    }, 2500);
+    return false
+  }
+
+  e.preventeDefault()
+  return true
 }

@@ -79,6 +79,7 @@
   display: block;
   text-align: center;
   color: #fc3917;
+  font-size: 24px;
 }
 ::placeholder {
   font-size: 14px;
