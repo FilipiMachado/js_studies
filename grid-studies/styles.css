@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  background-color: #333;
+  border: 2px solid seagreen;
+  padding: 15px;
+}
+
+.container div {
+  background-color: #ccc;
+  border: 2px solid slateblue;
+  padding: 20px;
+}
