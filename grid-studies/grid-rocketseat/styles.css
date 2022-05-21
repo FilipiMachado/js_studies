@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #9159c1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 15vh 70vh 15vh;
+  grid-template-areas: 
+    'header header'
+    'main aside'
+    'footer footer';
+}
+
+header {
+  background-color: #a57a2a;
+  grid-area: header;
+}
+main {
+  background-color: #2aa572;
+  grid-area: main;
+}
+aside {
+  background-color: #a52a9f;
+  grid-area: aside;
+}
+footer {
+  background-color: #a52a30;
+  grid-area: footer;
+}
