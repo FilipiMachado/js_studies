@@ -3,6 +3,7 @@
   border: 4px solid #00ff6e;
   padding: 15px;
   display: grid;
+  grid-template-columns: auto auto auto;
   gap: 10px;
 }
 .container div {
@@ -11,8 +12,28 @@
   padding: 20px;
 }
 
-
-
+#item-1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+#item-2 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+#item-3 {
+  justify-self: end;
+  height: 200px;
+}
+#item-4 {
+  align-self: center;
+}
+#item-5 {
+  justify-self: start;
+  height: 200px;
+}
+#item-6 {
+  align-self: end;
+}
 
 /* .container {
   background-color: #333;
