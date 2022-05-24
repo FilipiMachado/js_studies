@@ -23,5 +23,15 @@ function createPost(data) {
 }
 
 createPost({ owner: "filbr", content: "My second post" });
+//console.log(userDataList.posts);
 
-console.log(userDataList.posts);
+// READ
+function getPosts() {
+  return userDataList.posts;
+}
+
+console.log(getPosts());
+
+// UPDATE
+
+// DELETE
