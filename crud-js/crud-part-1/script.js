@@ -10,26 +10,32 @@ const userDataList = {
       content: "My first post",
     },
   ],
-  createPost(data) {
-    userDataList.posts.push({
-      owner: data.owner,
-      content: data.content,
-    });
+  createPost(data, htmlOnly = false) {
+    if (!htmlOnly) {
+      userDataList.posts.push({
+        owner: data.owner,
+        content: data.content,
+      });
+    }
+
+    const postList = document.getElementById("post-list");
+    postList.insertAdjacentHTML("afterbegin", `<li>${data.content}</li>`);
   },
 };
 
-userDataList.createPost({ owner: "filtroll", content: "My second post" });
-console.log(userDataList.posts)
+userDataList.posts.forEach(({ owner, content }) => {
+  userDataList.createPost({ owner: owner, content: content }, true);
+});
 
 const form = document.getElementById("form");
 const formInput = document.getElementById("post-input");
-const postList = document.getElementById("post-list");
 
 form.addEventListener("submit", function createPostController(e) {
   e.preventDefault();
+  userDataList.createPost({ owner: "filtroll", content: formInput.value });
+  formInput.value = "";
   //console.log('Creating a new post')
   //console.log(formInput.value)
-
-  postList.insertAdjacentHTML("afterbegin", `<li>${formInput.value}</li>`);
-  formInput.value = "";
 });
+
+console.log(userDataList.posts)
