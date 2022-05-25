@@ -20,6 +20,7 @@ const userDataList = {
     });
   },
   createPost: function (data, htmlOnly = false) {
+    const id = userDataList.posts.length
     if (!htmlOnly) {
       userDataList.posts.push({
         id: userDataList.posts.length + 1,
@@ -27,17 +28,19 @@ const userDataList = {
         content: data.content,
       });
     }
-
     postList.insertAdjacentHTML(
       "afterbegin",
       `
-      <li>
+      <li data-id="${id}">
         ${data.content}
         <button style="cursor: pointer" class="fas fa-trash btn-delete"></button>
       </li>
     `
     );
     postInput.value = "";
+  },
+  deletePost: function () {
+
   },
 };
 
@@ -53,9 +56,11 @@ myForm.addEventListener("submit", function createPostController(e) {
 
 // DELETE
 postList.addEventListener("click", function deletePost(e) {
-  const isBtnDeleteClick = e.target.classList.contains("btn-delete");
-  console.log("click happened!");
+  const actualElement = e.target;
+  const isBtnDeleteClick = actualElement.classList.contains('btn-delete')
   if (isBtnDeleteClick) {
-    
+    const id = actualElement.parentNode.getAttribute('data-id')
+    userDataList.deletePost({ id })
+    actualElement.parentNode.remove();
   }
 });
