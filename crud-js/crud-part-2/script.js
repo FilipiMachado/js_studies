@@ -20,7 +20,7 @@ const userDataList = {
     });
   },
   createPost: function (data, htmlOnly = false) {
-    const id = userDataList.posts.length
+    const id = userDataList.posts.length;
     if (!htmlOnly) {
       userDataList.posts.push({
         id: userDataList.posts.length + 1,
@@ -39,8 +39,11 @@ const userDataList = {
     );
     postInput.value = "";
   },
-  deletePost: function () {
-
+  deletePost: function (id) {
+    const updatedPostList = userDataList.loadPosts().filter((post) => {
+      return post.id !== id;
+    });
+    userDataList.posts = updatedPostList;
   },
 };
 
@@ -57,10 +60,10 @@ myForm.addEventListener("submit", function createPostController(e) {
 // DELETE
 postList.addEventListener("click", function deletePost(e) {
   const actualElement = e.target;
-  const isBtnDeleteClick = actualElement.classList.contains('btn-delete')
+  const isBtnDeleteClick = actualElement.classList.contains("btn-delete");
   if (isBtnDeleteClick) {
-    const id = actualElement.parentNode.getAttribute('data-id')
-    userDataList.deletePost({ id })
+    const id = actualElement.parentNode.getAttribute("data-id");
+    userDataList.deletePost({ id });
     actualElement.parentNode.remove();
   }
 });
