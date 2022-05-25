@@ -28,17 +28,34 @@ const userDataList = {
       });
     }
 
-    postList.insertAdjacentHTML("afterbegin", `<li>${data.content}</li>`);
+    postList.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <li>
+        ${data.content}
+        <button style="cursor: pointer" class="fas fa-trash btn-delete"></button>
+      </li>
+    `
+    );
     postInput.value = "";
   },
 };
 
 // READ
-userDataList.loadPosts()
+userDataList.loadPosts();
 
 // CREATE
 myForm.addEventListener("submit", function createPostController(e) {
   e.preventDefault();
 
   userDataList.createPost({ owner: "filbr", content: postInput.value });
+});
+
+// DELETE
+postList.addEventListener("click", function deletePost(e) {
+  const isBtnDeleteClick = e.target.classList.contains("btn-delete");
+  console.log("click happened!");
+  if (isBtnDeleteClick) {
+    
+  }
 });
