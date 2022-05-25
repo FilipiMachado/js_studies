@@ -10,20 +10,21 @@ const userDataList = {
   ],
   posts: [
     {
+      id: Date.now(),
       owner: "filbr",
       content: "My first post",
     },
   ],
   loadPosts: function () {
-    userDataList.posts.forEach(({ owner, content }) => {
-      userDataList.createPost({ owner: owner, content: content }, true);
+    userDataList.posts.forEach(({ id, owner, content }) => {
+      userDataList.createPost({ id: id, owner: owner, content: content }, true);
     });
   },
   createPost: function (data, htmlOnly = false) {
-    const id = userDataList.posts.length;
+    const internalId = Date.now();
     if (!htmlOnly) {
       userDataList.posts.push({
-        id: userDataList.posts.length + 1,
+        id: data.id || internalId,
         owner: data.owner,
         content: data.content,
       });
@@ -31,7 +32,7 @@ const userDataList = {
     postList.insertAdjacentHTML(
       "afterbegin",
       `
-      <li data-id="${id}">
+      <li data-id="${internalId}">
         ${data.content}
         <button style="cursor: pointer" class="fas fa-trash btn-delete"></button>
       </li>
@@ -40,8 +41,8 @@ const userDataList = {
     postInput.value = "";
   },
   deletePost: function (id) {
-    const updatedPostList = userDataList.loadPosts().filter((post) => {
-      return post.id !== id;
+    const updatedPostList = userDataList.posts.filter((post) => {
+      return post.id !== Number(id);
     });
     userDataList.posts = updatedPostList;
   },
@@ -63,7 +64,11 @@ postList.addEventListener("click", function deletePost(e) {
   const isBtnDeleteClick = actualElement.classList.contains("btn-delete");
   if (isBtnDeleteClick) {
     const id = actualElement.parentNode.getAttribute("data-id");
+
+    // Manipulate the server side/database/file/source
     userDataList.deletePost({ id });
+
+    //Manipulate the View/Output
     actualElement.parentNode.remove();
   }
 });
