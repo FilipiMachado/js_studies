@@ -14,6 +14,11 @@ const userDataList = {
       content: "My first post",
     },
   ],
+  loadPosts: function () {
+    userDataList.posts.forEach(({ owner, content }) => {
+      userDataList.createPost({ owner: owner, content: content }, true);
+    });
+  },
   createPost: function (data, htmlOnly = false) {
     if (!htmlOnly) {
       userDataList.posts.push({
@@ -28,10 +33,10 @@ const userDataList = {
   },
 };
 
-userDataList.posts.forEach(({ owner, content }) => {
-  userDataList.createPost({ owner: owner, content: content }, true);
-});
+// READ
+userDataList.loadPosts()
 
+// CREATE
 myForm.addEventListener("submit", function createPostController(e) {
   e.preventDefault();
 
