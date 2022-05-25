@@ -29,7 +29,7 @@ const userDataList = {
 };
 
 userDataList.posts.forEach(({ owner, content }) => {
-  userDataList.createPost({ owner: owner, content: content });
+  userDataList.createPost({ owner: owner, content: content }, true);
 });
 
 myForm.addEventListener("submit", function createPostController(e) {

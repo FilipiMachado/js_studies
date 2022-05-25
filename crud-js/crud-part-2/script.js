@@ -1,3 +1,7 @@
+const myForm = document.getElementById("form");
+const postInput = document.getElementById("post-input");
+const postList = document.getElementById("post-list");
+
 const userDataList = {
   users: [
     {
@@ -10,16 +14,17 @@ const userDataList = {
       content: "My first post",
     },
   ],
-  createPost(data, htmlOnly = false) {
+  createPost: function (data, htmlOnly = false) {
     if (!htmlOnly) {
       userDataList.posts.push({
+        id: userDataList.posts.length + 1,
         owner: data.owner,
         content: data.content,
       });
     }
 
-    const postList = document.getElementById("post-list");
     postList.insertAdjacentHTML("afterbegin", `<li>${data.content}</li>`);
+    postInput.value = "";
   },
 };
 
@@ -27,15 +32,8 @@ userDataList.posts.forEach(({ owner, content }) => {
   userDataList.createPost({ owner: owner, content: content }, true);
 });
 
-const form = document.getElementById("form");
-const formInput = document.getElementById("post-input");
-
-form.addEventListener("submit", function createPostController(e) {
+myForm.addEventListener("submit", function createPostController(e) {
   e.preventDefault();
-  userDataList.createPost({ owner: "filtroll", content: formInput.value });
-  formInput.value = "";
-  //console.log('Creating a new post')
-  //console.log(formInput.value)
-});
 
-console.log(userDataList.posts)
+  userDataList.createPost({ owner: "filbr", content: postInput.value });
+});
